@@ -6,14 +6,16 @@ import Day from './components/Day.js'
 const mapStateToProps = (state) => {
    return {
       series: state.series,
-      dates: state.dates
+      dates: state.dates,
+      games: state.games
    }
 }
 
 const mapDispatchToProps = (dispatch) => {
    return {
       fetchSeries: (series) => dispatch({type: 'FETCH_SERIES', payload: series}),
-      fetchDates: (dates) => dispatch({type: 'FETCH_DATES', payload: dates})
+      fetchDates: (dates) => dispatch({type: 'FETCH_DATES', payload: dates}),
+      fetchGames: (games) => dispatch({type: 'FETCH_GAMES', payload: games}),
    }
 }
 
@@ -26,6 +28,7 @@ class App extends Component {
          this.props.fetchSeries(data.series)
          data.series.forEach(ser => {
             ser.games.forEach(game => {
+               this.props.fetchGames(game)
                !this.props.dates.includes(game.calendarEventID.slice(10)) ? this.props.fetchDates(game.calendarEventID.slice(10)) : console.log("date added")
             })
          })

@@ -1,6 +1,7 @@
 const initialState = {
    series: [],
-   dates: []
+   dates: [],
+   games: []
 }
 
 export default (state = initialState, action) => {
@@ -9,6 +10,8 @@ export default (state = initialState, action) => {
          return {...state, series: action.payload}
       case 'FETCH_DATES':
          return {...state, dates: [...state.dates, action.payload]}
+      case 'FETCH_GAMES':
+         return {...state, games: [...state.games, action.payload]}
       default:
          return state
    }
