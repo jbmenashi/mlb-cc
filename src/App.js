@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
+import Day from './components/Day.js'
 
 const mapStateToProps = (state) => {
    return {
@@ -34,10 +34,9 @@ class App extends Component {
    }
 
    render() {
-      console.log(this.props.dates.sort())
       return (
          <div className="App">
-            Hello
+            {this.props.dates.sort().map(day => <Day day={day} />)}
          </div>
       )
    }
