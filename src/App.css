@@ -29,6 +29,11 @@
    border-top: 1px solid #DEDEDF;
 }
 
+.game-div:hover {
+   background-color: rgb(250, 250, 250);
+   cursor: pointer;
+}
+
 .series-status {
    font-weight: bold;
    color: grey;
@@ -47,23 +52,32 @@
    font-size: 15px;
 }
 
-.team-logo {
+.game-content {
    display: inline-block;
    margin-right: 10px;
    vertical-align: middle;
-}
-
-.team-name {
-   display: inline-block;
    font-size: 25px;
    font-weight: bold;
-   margin-right: 10px;
-   vertical-align: middle;
 }
 
-.team-score {
+.game-content.broadcast {
+   margin-left: 30px;
+   width: 150px;
+}
+
+.game-content.decisions {
+   width: 175px;
+}
+
+.pitcher {
+   color: cornflowerblue;
+   margin-right: 20px;
+}
+
+.pitcher:hover {
+   text-decoration: underline;
+}
+
+.links {
    display: inline-block;
-   font-weight: bold;
-   font-size: 25px;
-   vertical-align: middle;
 }
