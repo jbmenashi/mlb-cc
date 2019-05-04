@@ -10,7 +10,7 @@ class Game extends Component {
                   {this.props.seriesStatus.shortDescription.toUpperCase()} - {this.props.seriesStatus.result.toUpperCase()}
                </div>
                <div className="game-info">
-                  <div className="away-team">
+                  <div className="team">
                      <div className="team-logo">
                         <img src={require(`../images/${this.props.teams.away.team.id}.png`)} alt="away team" width="25" height="25"/>
                      </div>
@@ -22,7 +22,7 @@ class Game extends Component {
                      </div>
                   </div>
                   <div className="at">@</div>
-                  <div className="home-team">
+                  <div className="team">
                      <div className="team-logo">
                         <img src={require(`../images/${this.props.teams.home.team.id}.png`)} alt="home team" width="25" height="25"/>
                      </div>

@@ -32,7 +32,7 @@
    color: grey;
 }
 
-.away-team {
+.team {
    display: inline-block;
    margin-top: 10px;
    width: 200px;
@@ -43,12 +43,6 @@
    vertical-align: middle;
    margin-right: 10px;
    font-size: 15px;
-}
-
-.home-team {
-   display: inline-block;
-   margin-top: 10px;
-   width: 200px;
 }
 
 .team-logo {
