@@ -5,7 +5,10 @@ class Game extends Component {
       console.log(this.props)
       return (
          <Fragment>
-            <div>
+            <div className="game-div">
+               <div className="series-status">
+                  {this.props.seriesStatus.shortDescription.toUpperCase()} - {this.props.seriesStatus.result.toUpperCase()}
+               </div>
                {this.props.teams.away.team.name} @ {this.props.teams.home.team.name}
             </div>
          </Fragment>
