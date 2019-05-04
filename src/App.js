@@ -40,7 +40,7 @@ class App extends Component {
    render() {
       return (
          <div className="App">
-            <img src={require(`./images/mlblogo.png`)} alt="mlb logo" width="200" height="125"/>
+            <img id="mlb-logo" src={require(`./images/mlblogo.png`)} alt="mlb logo" width="200" height="125"/>
             <Divider horizontal id="title"><h1>2018 MLB Postseason Schedule</h1></Divider>
             {this.props.dates.sort().map((day, idx) => <Day day={day} key={idx} />)}
          </div>

@@ -15,7 +15,7 @@ class Day extends Component {
       return (
          <Fragment>
             <div id="date-div">
-               <Moment format="LL">{this.props.day}</Moment>
+               <Moment format="dddd, MMMM Do">{this.props.day}</Moment>
             </div>
             <Divider/>
             {this.props.games.filter(game => game.calendarEventID.slice(10) === this.props.day).map(game => <Game {...game} key={game.gamePk} />)}
