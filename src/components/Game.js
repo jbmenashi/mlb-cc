@@ -20,7 +20,7 @@ class Game extends Component {
                <div className="series-status">
                   {this.props.seriesStatus.shortDescription.toUpperCase()} - {this.props.seriesStatus.result.toUpperCase()}
                </div>
-               <div>
+               <div className="game-info">
                   {/* start inline block */}
                   <div className="team">
                      <div className="game-content">
@@ -61,7 +61,7 @@ class Game extends Component {
                      }
                   </div>
                   <div className="game-content pitcher">
-                     <a href="http://www.mlb.com">Wrap and Video</a>
+                     <a className="links" href="http://www.mlb.com">Wrap and Video</a>
                   </div>
                   {/* finish inline block  */}
                </div>

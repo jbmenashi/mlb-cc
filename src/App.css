@@ -66,11 +66,11 @@
 
 .game-content.broadcast {
    margin-left: 30px;
-   width: 150px;
+   width: 100px;
 }
 
 .game-content.decisions {
-   width: 175px;
+   width: 170px;
 }
 
 .pitcher {
@@ -84,4 +84,27 @@
 
 .links {
    display: inline-block;
+}
+
+@media screen and (min-width: 1237px) and (max-width: 1411px) {
+   .game-div {
+      height: 120px;
+   }
+   
+   .links {
+      margin-top: 20px;
+   }
+}
+@media screen and (min-width: 765px) and (max-width: 1236px) {
+   .game-div {
+      height: 120px;
+   }
+   
+   .links {
+      margin-top: 20px;
+   }
+
+   .game-content.decisions {
+      margin-top: 20px;
+   }
 }
