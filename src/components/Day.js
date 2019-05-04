@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Divider } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import Moment from 'react-moment'
 import Game from './Game'
@@ -13,10 +14,11 @@ class Day extends Component {
    render() {
       return (
          <Fragment>
-            <div>
+            <div id="date-div">
                <Moment format="LL">{this.props.day}</Moment>
             </div>
-            {this.props.games.filter(game => game.calendarEventID.slice(10) === this.props.day).map(game => <Game {...game} />)}
+            <Divider/>
+            {this.props.games.filter(game => game.calendarEventID.slice(10) === this.props.day).map(game => <Game {...game} key={game.gamePk} />)}
          </Fragment>
       );
    }

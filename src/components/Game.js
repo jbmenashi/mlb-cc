@@ -6,7 +6,7 @@ class Game extends Component {
       return (
          <Fragment>
             <div>
-               Game!
+               {this.props.teams.away.team.name} @ {this.props.teams.home.team.name}
             </div>
          </Fragment>
       );

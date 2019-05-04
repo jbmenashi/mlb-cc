@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Divider } from 'semantic-ui-react';
 import './App.css';
 import { connect } from 'react-redux'
 import Day from './components/Day.js'
@@ -39,7 +40,9 @@ class App extends Component {
    render() {
       return (
          <div className="App">
-            {this.props.dates.sort().map(day => <Day day={day} />)}
+            <img src={require(`./images/mlblogo.png`)} alt="mlb logo" width="200" height="125"/>
+            <Divider horizontal id="title"><h1>2018 MLB Postseason Schedule</h1></Divider>
+            {this.props.dates.sort().map((day, idx) => <Day day={day} key={idx} />)}
          </div>
       )
    }

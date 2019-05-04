@@ -1,4 +1,14 @@
 .App {
   text-align: center;
+  padding: 0 15px;
 }
 
+#title {
+   margin-top: 0;
+}
+
+#date-div {
+   font-size: 30px;
+   font-weight: bold;
+   text-align: left;
+}
