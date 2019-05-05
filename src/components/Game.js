@@ -134,7 +134,7 @@ class Game extends Component {
                         <Table.Cell>{this.props.linescore.innings[6].home.runs}</Table.Cell>
                         <Table.Cell>{this.props.linescore.innings[7].home.runs}</Table.Cell>
                         <Table.Cell>{
-                           this.props.linescore.innings[8].home.runs === 0 && this.props.teams.home.isWinner && !this.props.linescore.innings[9]?
+                           this.props.linescore.innings[8].home.runs === 0 && this.props.teams.home.isWinner && !this.props.linescore.innings[9] ?
                            '-' :
                            this.props.linescore.innings[8].home.runs
                         }</Table.Cell>

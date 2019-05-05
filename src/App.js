@@ -35,7 +35,7 @@ class App extends Component {
          data.series.forEach(ser => {
             ser.games.forEach(game => {
                this.props.fetchGames(game)
-               !this.props.dates.includes(game.calendarEventID.slice(10)) ? this.props.fetchDates(game.calendarEventID.slice(10)) : console.log("date added")
+               !this.props.dates.includes(game.calendarEventID.slice(10)) ? this.props.fetchDates(game.calendarEventID.slice(10)) : console.log("date already added")
             })
          })
          console.log("fetch complete")
