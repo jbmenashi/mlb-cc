@@ -3,6 +3,7 @@ import { Divider, Button } from 'semantic-ui-react';
 import './App.css';
 import { connect } from 'react-redux'
 import Day from './components/Day.js'
+import Series from './components/Series.js'
 
 const mapStateToProps = (state) => {
    return {
@@ -29,7 +30,7 @@ class App extends Component {
       fetch("http://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&season=2018&hydrate=team,broadcasts(all),seriesStatus(useOverride=true),decisions,person,probablePitcher,linescore(matchup)")
       .then(res => res.json())
       .then(data => {
-         this.props.fetchSeries(data.series)
+         this.props.fetchSeries(data.series.slice(1).concat(data.series.shift()))
          data.series.forEach(ser => {
             ser.games.forEach(game => {
                this.props.fetchGames(game)
@@ -51,7 +52,11 @@ class App extends Component {
                   <Button onClick={this.props.toggleDate}>By Date</Button>
                   <Button onClick={this.props.toggleRound}>By Round</Button>
                </Button.Group>
-               {this.props.dateToggle ? this.props.dates.sort().map((day, idx) => <Day day={day} key={idx} />) : <div>Round</div> }
+               {
+                  this.props.dateToggle ?
+                  this.props.dates.sort().map((day, idx) => <Day day={day} key={idx} />) :
+                  this.props.series.map((series, idx) => <Series series={series} key={idx}/>)
+                }
          </div>
       )
    }

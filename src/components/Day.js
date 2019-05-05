@@ -14,7 +14,7 @@ class Day extends Component {
    render() {
       return (
          <Fragment>
-            <div id="date-div">
+            <div className="date-div">
                <Moment format="dddd, MMMM Do">{this.props.day}</Moment>
             </div>
             <Divider/>

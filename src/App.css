@@ -20,7 +20,7 @@
    width: 200px;
 }
 
-#date-div {
+.date-div {
    text-align: left;
    font-size: 35px;
    font-weight: bold;
@@ -110,7 +110,7 @@
 }
 
 @media screen and (min-width: 615px) and (max-width: 764px) {
-   #date-div {
+   .date-div {
       text-align: center;
    }
 
@@ -130,7 +130,7 @@
 }
 
 @media screen and (min-width: 410px) and (max-width: 615px) {
-   #date-div {
+   .date-div {
       text-align: center;
    }
 
@@ -172,7 +172,7 @@
 }
 
 @media screen and (max-width: 410px) {
-   #date-div {
+   .date-div {
       text-align: center;
       font-size: 25px;
    }
