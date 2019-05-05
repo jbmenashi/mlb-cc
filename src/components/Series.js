@@ -22,7 +22,7 @@ class Series extends Component {
                }
             </div>
             <Divider/>
-            {/* {this.props.games.filter(game => game.calendarEventID.slice(10) === this.props.day).map(game => <Game {...game} key={game.gamePk} />)} */}
+            {this.props.series.games.map(game => <Game {...game} key={game.gamePk} />)}
          </Fragment>
       );
    }
