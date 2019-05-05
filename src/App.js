@@ -27,6 +27,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class App extends Component {
    componentDidMount() {
+      console.log("fetch started")
       fetch("http://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&season=2018&hydrate=team,broadcasts(all),seriesStatus(useOverride=true),decisions,person,probablePitcher,linescore(matchup)")
       .then(res => res.json())
       .then(data => {
@@ -37,7 +38,7 @@ class App extends Component {
                !this.props.dates.includes(game.calendarEventID.slice(10)) ? this.props.fetchDates(game.calendarEventID.slice(10)) : console.log("date added")
             })
          })
-         
+         console.log("fetch complete")
       })
    }
 

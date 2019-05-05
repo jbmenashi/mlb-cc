@@ -117,7 +117,7 @@ class Game extends Component {
                         <Table.Cell>{
                            this.props.linescore.innings[9] ?
                            this.calcXtraInnings(this.props.linescore.innings.slice(9))[0] :
-                           ''
+                           '-'
                         }</Table.Cell>
                         <Table.Cell>{this.props.linescore.teams.away.runs}</Table.Cell>
                         <Table.Cell>{this.props.linescore.teams.away.hits}</Table.Cell>
@@ -135,13 +135,13 @@ class Game extends Component {
                         <Table.Cell>{this.props.linescore.innings[7].home.runs}</Table.Cell>
                         <Table.Cell>{
                            this.props.linescore.innings[8].home.runs === 0 && this.props.teams.home.isWinner && !this.props.linescore.innings[9]?
-                           '' :
+                           '-' :
                            this.props.linescore.innings[8].home.runs
                         }</Table.Cell>
                         <Table.Cell>{
                            this.props.linescore.innings[9] ?
                            this.calcXtraInnings(this.props.linescore.innings.slice(9))[1] :
-                           ''
+                           '-'
                         }</Table.Cell>
                         <Table.Cell>{this.props.linescore.teams.home.runs}</Table.Cell>
                         <Table.Cell>{this.props.linescore.teams.home.hits}</Table.Cell>
