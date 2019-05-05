@@ -30,7 +30,7 @@ class App extends Component {
       fetch("http://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&season=2018&hydrate=team,broadcasts(all),seriesStatus(useOverride=true),decisions,person,probablePitcher,linescore(matchup)")
       .then(res => res.json())
       .then(data => {
-         this.props.fetchSeries(data.series.slice(1).concat(data.series.shift()))
+         this.props.fetchSeries(data.series.slice(1).concat(data.series[0]))
          data.series.forEach(ser => {
             ser.games.forEach(game => {
                this.props.fetchGames(game)

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { Modal, Table } from 'semantic-ui-react'
 
 
 
@@ -12,10 +13,21 @@ class Game extends Component {
    //       return `https://www.mlb.com/news/${data.editorial.wrap.mlb.slug}/${data.editorial.wrap.mlb.id}`
    //    })
    // }
+
+   calcXtraInnings = (arr) => {
+      let awayRuns = 0
+      let homeRuns = 0
+      for (let i = 0; i < arr.length; i++) {
+         awayRuns += arr[i].away.runs
+         homeRuns += arr[i].home.runs
+      }
+      return [awayRuns, homeRuns]
+   }
    
    render() {
       return (
          <Fragment>
+            <Modal className="linescore" size="tiny" dimmer="blurring" trigger={
             <div className="game-div">
                <div className="series-status">
                   {this.props.seriesStatus.shortDescription.toUpperCase()} - {this.props.seriesStatus.result.toUpperCase()}
@@ -66,6 +78,80 @@ class Game extends Component {
                   {/* finish inline block  */}
                </div>
             </div>
+            }>
+               <Modal.Header>{this.props.teams.away.team.name} @ {this.props.teams.home.team.name}, Game {this.props.seriesGameNumber}</Modal.Header>
+               <Modal.Description>
+                  <Table celled>
+
+                     <Table.Header>
+                        <Table.Row>
+                        <Table.HeaderCell></Table.HeaderCell>
+                        <Table.HeaderCell>1</Table.HeaderCell>
+                        <Table.HeaderCell>2</Table.HeaderCell>
+                        <Table.HeaderCell>3</Table.HeaderCell>
+                        <Table.HeaderCell>4</Table.HeaderCell>
+                        <Table.HeaderCell>5</Table.HeaderCell>
+                        <Table.HeaderCell>6</Table.HeaderCell>
+                        <Table.HeaderCell>7</Table.HeaderCell>
+                        <Table.HeaderCell>8</Table.HeaderCell>
+                        <Table.HeaderCell>9</Table.HeaderCell>
+                        <Table.HeaderCell>X</Table.HeaderCell>
+                        <Table.HeaderCell>R</Table.HeaderCell>
+                        <Table.HeaderCell>H</Table.HeaderCell>
+                        <Table.HeaderCell>E</Table.HeaderCell>
+                        </Table.Row>
+                     </Table.Header>
+
+                     <Table.Body>
+                        <Table.Row>
+                        <Table.Cell>{this.props.teams.away.team.abbreviation}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[0].away.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[1].away.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[2].away.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[3].away.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[4].away.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[5].away.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[6].away.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[7].away.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[8].away.runs}</Table.Cell>
+                        <Table.Cell>{
+                           this.props.linescore.innings[9] ?
+                           this.calcXtraInnings(this.props.linescore.innings.slice(9))[0] :
+                           ''
+                        }</Table.Cell>
+                        <Table.Cell>{this.props.linescore.teams.away.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.teams.away.hits}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.teams.away.errors}</Table.Cell>
+                        </Table.Row>
+                        <Table.Row>
+                        <Table.Cell>{this.props.teams.home.team.abbreviation}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[0].home.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[1].home.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[2].home.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[3].home.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[4].home.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[5].home.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[6].home.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.innings[7].home.runs}</Table.Cell>
+                        <Table.Cell>{
+                           this.props.linescore.innings[8].home.runs === 0 && this.props.teams.home.isWinner && !this.props.linescore.innings[9]?
+                           '' :
+                           this.props.linescore.innings[8].home.runs
+                        }</Table.Cell>
+                        <Table.Cell>{
+                           this.props.linescore.innings[9] ?
+                           this.calcXtraInnings(this.props.linescore.innings.slice(9))[1] :
+                           ''
+                        }</Table.Cell>
+                        <Table.Cell>{this.props.linescore.teams.home.runs}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.teams.home.hits}</Table.Cell>
+                        <Table.Cell>{this.props.linescore.teams.home.errors}</Table.Cell>
+                        </Table.Row>
+                     </Table.Body>
+
+                  </Table>
+               </Modal.Description>
+            </Modal>
          </Fragment>
       );
    }

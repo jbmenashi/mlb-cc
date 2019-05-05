@@ -86,6 +86,25 @@
    display: inline-block;
 }
 
+.ui.tiny.modal {
+   width: 470px;
+}
+
+.ui.modal>.header:not(.ui) {
+   text-align: center;
+   padding: 10px;
+   font-family: 'Roboto Condensed', sans-serif;
+}
+
+.ui.modal>.description:not(.ui) {
+   height: 130px;
+   text-align: center;
+   padding: 10px;
+   font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+
 @media screen and (min-width: 1237px) and (max-width: 1411px) {
    .game-div {
       height: 120px;

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Divider } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import Moment from 'react-moment'
 import Game from './Game'
 
 const mapStateToProps = state => {
