@@ -108,3 +108,113 @@
       margin-top: 20px;
    }
 }
+
+@media screen and (min-width: 615px) and (max-width: 764px) {
+   #date-div {
+      text-align: center;
+   }
+
+   .game-div {
+      text-align: center;
+      height: 240px;
+      font-size: 20px;
+   }
+
+   .game-content {
+      margin-top: 20px;
+   }
+
+   .team {
+      width: 45vw;
+   }
+}
+
+@media screen and (min-width: 410px) and (max-width: 615px) {
+   #date-div {
+      text-align: center;
+   }
+
+   #mlb-logo {
+      width: 120px;
+      height: 75px;
+   }
+
+   #toggle button {
+      width: 100px;
+   }
+
+   h1 {
+      font-size: 15px;
+   }
+
+   .game-div {
+      text-align: center;
+      height: 270px;
+
+   }
+
+   .game-content {
+      margin-top: 20px;
+      font-size: 20px;
+   }
+
+   .team {
+      width: 38vw;
+   }
+
+   .game-content.status {
+      width: 30vw;
+   }
+
+   .game-content.broadcast {
+      width: 30vw;
+   }
+}
+
+@media screen and (max-width: 410px) {
+   #date-div {
+      text-align: center;
+      font-size: 25px;
+   }
+
+   #mlb-logo {
+      width: 120px;
+      height: 75px;
+   }
+
+   #toggle button {
+      width: 100px;
+   }
+
+   h1 {
+      font-size: 15px;
+   }
+
+   .game-div {
+      text-align: center;
+      height: 240px;
+      
+   }
+
+   .game-content {
+      margin-top: 20px;
+      font-size: 15px;
+   }
+
+   .team {
+      width: 38vw;
+   }
+
+   .game-content.status {
+      width: 30vw;
+   }
+
+   .game-content.broadcast {
+      width: 30vw;
+   }
+
+   .game-content.decisions {
+      width: 25vw;
+      font-size: 12px;
+   }
+}

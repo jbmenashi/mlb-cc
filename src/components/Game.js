@@ -27,7 +27,7 @@ class Game extends Component {
                         <img src={require(`../images/${this.props.teams.away.team.id}.png`)} alt="away team" width="25" height="25"/>
                      </div>
                      <div className="game-content">
-                        {this.props.teams.away.team.id == 111 ? this.props.teams.away.team.name.split(' ').slice(1).join(' ') : this.props.teams.away.team.name.split(' ')[this.props.teams.away.team.name.split(' ').length - 1] }
+                        {this.props.teams.away.team.id === 111 ? this.props.teams.away.team.name.split(' ').slice(1).join(' ') : this.props.teams.away.team.name.split(' ')[this.props.teams.away.team.name.split(' ').length - 1] }
                      </div>
                      <div className="game-content">
                         {this.props.teams.away.score}
@@ -39,13 +39,13 @@ class Game extends Component {
                         <img src={require(`../images/${this.props.teams.home.team.id}.png`)} alt="home team" width="25" height="25"/>
                      </div>
                      <div className="game-content">
-                        {this.props.teams.home.team.id == 111 ? this.props.teams.home.team.name.split(' ').slice(1).join(' ') : this.props.teams.home.team.name.split(' ')[this.props.teams.home.team.name.split(' ').length - 1] }
+                        {this.props.teams.home.team.id === 111 ? this.props.teams.home.team.name.split(' ').slice(1).join(' ') : this.props.teams.home.team.name.split(' ')[this.props.teams.home.team.name.split(' ').length - 1] }
                      </div>
                      <div className="game-content">
                         {this.props.teams.home.score}
                      </div>
                   </div>
-                  <div className="game-content">
+                  <div className="game-content status">
                      {this.props.status.detailedState.toUpperCase()}
                   </div>
                   <div className="game-content broadcast">
