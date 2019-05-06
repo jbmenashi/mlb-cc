@@ -1,7 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import { Modal, Table } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import Moment from 'react-moment'
 
-
+const mapStateToProps = (state) => {
+   return {
+      dateToggle: state.dateToggle
+   }
+}
 
 class Game extends Component {
 
@@ -30,7 +36,9 @@ class Game extends Component {
             <Modal className="linescore" size="tiny" dimmer="blurring" trigger={
             <div className="game-div">
                <div className="series-status">
-                  {this.props.seriesStatus.shortDescription.toUpperCase()} - {this.props.seriesStatus.result.toUpperCase()}
+                  {this.props.dateToggle ?
+                  this.props.seriesStatus.shortDescription.toUpperCase() :
+                  <Moment format="dddd, MMMM Do">{this.props.gameDate}</Moment>} - {this.props.seriesStatus.result.toUpperCase()}
                </div>
                <div className="game-info">
                   {/* start inline block */}
@@ -157,4 +165,4 @@ class Game extends Component {
    }
 }
 
-export default Game;
+export default connect(mapStateToProps)(Game);
